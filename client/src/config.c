@@ -302,6 +302,13 @@ static struct Option options[] =
     .type           = OPTION_TYPE_BOOL,
     .value.x_bool   = true
   },
+  {
+    .module         = "win",
+    .name           = "ewmhEnabled",
+    .description    = "Enable Extended Window Manager Hints (if supported)",
+    .type           = OPTION_TYPE_BOOL,
+    .value.x_bool   = true,
+  },
 
   // input options
   {
@@ -670,6 +677,7 @@ bool config_load(int argc, char * argv[])
   g_params.uiSize            = option_get_int   ("win", "uiSize"            );
   g_params.jitRender         = option_get_bool  ("win", "jitRender"         );
   g_params.requestActivation = option_get_bool  ("win", "requestActivation" );
+  g_params.ewmhEnabled       = option_get_bool  ("win", "ewmhEnabled"       );
 
   if (g_params.noScreensaver && g_params.autoScreensaver)
   {

@@ -98,6 +98,9 @@ typedef struct LG_DSInitParams
   // x11 needs to know if this is in use so we can decide to setup for
   // presentation times
   bool jitRender;
+
+  // Flag to manually toggle EMHW support
+  bool ewmhEnabled;
 }
 LG_DSInitParams;
 

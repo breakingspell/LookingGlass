@@ -372,7 +372,8 @@ static bool x11Init(const LG_DSInitParams params)
   XSetWMProtocols(x11.display, x11.window, &x11atoms.WM_DELETE_WINDOW, 1);
 
   // check for Extended Window Manager Hints support
-  x11CheckEWMHSupport();
+  if (params.ewmhEnabled)
+    x11CheckEWMHSupport();
 
   if (!x11.wm->init())
   {
